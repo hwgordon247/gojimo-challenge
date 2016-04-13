@@ -1,9 +1,12 @@
 require 'sinatra/base'
 require 'sinatra'
+require_relative 'models/api_request'
 
 class Gojimo < Sinatra::Base
 
   get '/' do
+    api_request = ApiRequest.new
+
     erb :'/home'
   end
 
