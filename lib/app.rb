@@ -4,7 +4,7 @@ require 'sinatra'
 class Gojimo < Sinatra::Base
 
   get '/' do
-    'Hello World'
+    erb :'/home'
   end
 
   # start the server if ruby file executed directly
