@@ -28,6 +28,11 @@ class Gojimo < Sinatra::Base
     redirect '/subjects'
   end
 
+  post '/refresh' do
+    ApiRequest.hit_api
+    redirect '/qualifications'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

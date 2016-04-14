@@ -12,4 +12,11 @@ feature 'qualification page' do
     expect(page).to have_content "Test"
   end
 
+  scenario 'can refresh the data from the api_request' do
+    visit '/'
+    click_button 'Continue'
+    expect(page).to have_content 'Refresh Information'
+  end
+
+
 end

@@ -1,7 +1,7 @@
 <h2><%= @qualification %></h2>
 
 <h3> Subjects: </h3>
-<% if @subjects.length == 0 %>
+<% if @subjects.empty? %>
   No subjects available for this qualification
 <% else %>
   <% @subjects.each do |subject| %>
