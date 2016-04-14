@@ -4,8 +4,6 @@ require 'json'
 
 class ApiRequest
 
-  attr_reader :information
-
   def initialize
     response = Net::HTTP.get(URI('https://api.gojimo.net/api/v4/qualifications'))
     @information = JSON.parse(response)

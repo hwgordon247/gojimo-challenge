@@ -5,7 +5,7 @@ feature 'home page' do
     expect(page).to have_content "Gojimo Challenge"
   end
 
-  xscenario 'has a list of qualifications' do
+  scenario 'has a list of qualifications' do
     visit '/'
     expect(page).to have_content "Test"
   end

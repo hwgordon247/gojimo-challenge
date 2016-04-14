@@ -6,6 +6,7 @@ class Gojimo < Sinatra::Base
 
   get '/' do
     api_request = ApiRequest.new
+    @qualifications = api_request.qualifications
 
     erb :'/home'
   end
