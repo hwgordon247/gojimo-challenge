@@ -1,9 +1,14 @@
 <h2><%= @qualification %></h2>
 
-<h3> Subjects </h3>
-<% @subjects.each do |subject| %>
-  <%= subject %> <br>
+<h3> Subjects: </h3>
+<% if @subjects.length == 0 %>
+  No subjects available for this qualification
+<% else %>
+  <% @subjects.each do |subject| %>
+    <%= subject %> <br>
+  <% end %>
 <% end %>
+
 
 <form action='/qualifications'>
   <button type='submit'> Return </button>
