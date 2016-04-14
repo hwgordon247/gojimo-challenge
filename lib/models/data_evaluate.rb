@@ -15,7 +15,7 @@ class DataEvaluate
     store_subjects(subjects)
   end
 
-
+  private
 
   def store_subjects(subjects)
     subject_array = []
