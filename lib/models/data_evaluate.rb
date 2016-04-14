@@ -11,21 +11,27 @@ class DataEvaluate
   end
 
   def return_subjects(chosen_qualification)
-    subjects = select_qualification(chosen_qualification)
-    store_subjects(subjects)
+    qualification = select_qualification(chosen_qualification)
+    store_subjects(qualification)
   end
+
+  def return_country(chosen_qualification)
+    qualification = select_qualification(chosen_qualification)
+    qualification['country']['name']
+  end
+
 
   private
 
-  def store_subjects(subjects)
+  def store_subjects(qualification)
     subject_hash = {}
-    subjects.each { |subject| subject_hash[subject['title']] = subject['colour'] }
+    qualification['subjects'].each { |subject| subject_hash[subject['title']] = subject['colour'] }
     subject_hash
   end
 
   def select_qualification(chosen_qualification)
-    @data.each do |qualification|
-      return qualification['subjects'] if chosen_qualification == qualification['name']
+    @data.each_with_index do |qualification, index|
+      return @data[index] if chosen_qualification == qualification['name']
     end
   end
 

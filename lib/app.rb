@@ -20,6 +20,7 @@ class Gojimo < Sinatra::Base
   get '/subjects' do
     @qualification = session[:qualification]
     @subjects = ApiRequest.sort_subjects(@qualification)
+    @country = ApiRequest.qualification_country(@qualification)
     erb :'/subjects'
   end
 

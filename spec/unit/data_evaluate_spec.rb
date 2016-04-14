@@ -19,4 +19,8 @@ describe DataEvaluate do
     expect(data_evaluate.return_subjects('Junior Certificate').length).to eq 8
   end
 
+  it 'can return the country of the chosen qualification' do
+    expect(data_evaluate.return_country('Junior Certificate')).to eq "Ireland"
+  end
+
 end
