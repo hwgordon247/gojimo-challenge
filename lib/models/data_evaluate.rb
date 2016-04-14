@@ -18,9 +18,9 @@ class DataEvaluate
   private
 
   def store_subjects(subjects)
-    subject_array = []
-    subjects.each { |subject| subject_array << subject['title'] }
-    subject_array
+    subject_hash = {}
+    subjects.each { |subject| subject_hash[subject['title']] = subject['colour'] }
+    subject_hash
   end
 
   def select_qualification(chosen_qualification)

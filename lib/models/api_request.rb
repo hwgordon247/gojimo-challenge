@@ -13,6 +13,13 @@ class ApiRequest
     @data_evaluate = DataEvaluate.new(@information)
   end
 
+  def initialize
+    url = URI('https://api.gojimo.net/api/v4/qualifications')
+    response = Net::HTTP.get(url)
+    @information = JSON.parse(response)
+    @data_evaluate = DataEvaluate.new(@information)
+  end
+
   def self.sort_qualifications
     @data_evaluate.return_qualifications
   end

@@ -4,8 +4,10 @@
 <% if @subjects.empty? %>
   No subjects available for this qualification
 <% else %>
-  <% @subjects.each do |subject| %>
-    <%= subject %> <br>
+  <% @subjects.each do |subject, colour| %>
+    <div style='background-color: <%=colour %>'>
+      <%= subject %> <br>
+    </div>
   <% end %>
 <% end %>
 
