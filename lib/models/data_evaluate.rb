@@ -14,14 +14,19 @@ class DataEvaluate
 
   def return_subjects(chosen_qualification)
     subject_store = []
-    @data.each do |qualification|
-      if chosen_qualification == qualification['name']
-        qualification['subjects'].each do |subject|
-          subject_store << subject['title']
-        end
-      end
+    subjects = select_qualification(chosen_qualification)
+    subjects.each do |subject|
+      subject_store << subject['title']
     end
     subject_store
   end
+
+  def select_qualification(chosen_qualification)
+    @data.each do |qualification|
+      return qualification['subjects'] if chosen_qualification == qualification['name']
+    end
+  end
+
+
 
 end
