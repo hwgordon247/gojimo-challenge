@@ -7,8 +7,12 @@ class Gojimo < Sinatra::Base
 
   get '/' do
     ApiRequest.hit_api
+    erb :'welcome'
+  end
+
+  get '/qualifications' do
     @qualifications = ApiRequest.sort_qualifications
-    erb :'/home'
+    erb :'/qualifications'
   end
 
   get '/subjects' do
