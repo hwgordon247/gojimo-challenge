@@ -3,19 +3,25 @@ require 'sinatra'
 require_relative 'models/api_request'
 
 class Gojimo < Sinatra::Base
+  enable :sessions
 
   get '/' do
-    api_request = ApiRequest.new
-    @qualifications = api_request.sort_qualifications
+    ApiRequest.hit_api
+    @qualifications = ApiRequest.sort_qualifications
     erb :'/home'
   end
 
-  post '/subjects' do
-    api_request = ApiRequest.new
-    @qualification = params[:qualification]
-    @subjects = api_request.sort_subjects(@qualification)
+  get '/subjects' do
+    @qualification = session[:qualification]
+    @subjects = ApiRequest.sort_subjects(@qualification)
     erb :'/subjects'
   end
+
+  post '/subjects' do
+    session[:qualification] = params[:qualification]
+    redirect '/subjects'
+  end
+
 
   # start the server if ruby file executed directly
   run! if app_file == $0

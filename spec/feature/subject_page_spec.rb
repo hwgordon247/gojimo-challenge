@@ -11,4 +11,11 @@ feature 'subject page' do
     click_button('Junior Certificate')
     expect(page).to have_content 'Maths'
   end
+
+  scenario 'has a return button' do
+    visit '/'
+    click_button('Junior Certificate')
+    click_button('Return')
+    expect(page).to have_content 'Gojimo Challenge'
+  end
 end

@@ -6,12 +6,13 @@ class ApiRequest
 
   attr_reader :information
 
-  def initialize
-    response = Net::HTTP.get(URI('https://api.gojimo.net/api/v4/qualifications'))
+  def self.hit_api
+    url = URI('https://api.gojimo.net/api/v4/qualifications')
+    response = Net::HTTP.get(url)
     @information = JSON.parse(response)
   end
 
-  def sort_qualifications
+  def self.sort_qualifications
     qualification_store = []
     @information.each do |qualification|
       qualification_store << qualification['name']
@@ -19,7 +20,7 @@ class ApiRequest
     qualification_store
   end
 
-  def sort_subjects(chosen_qualification)
+  def self.sort_subjects(chosen_qualification)
     subject_store = []
     @information.each do |qualification|
       if chosen_qualification == qualification['name']
