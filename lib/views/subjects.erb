@@ -1,1 +1,6 @@
-<%= @qualification %>
+<h2><%= @qualification %></h2>
+
+<h3> Subjects </h3>
+<% @subjects.each do |subject| %>
+  <%= subject %> <br>
+<% end %>
