@@ -11,6 +11,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'json'
+require_relative 'web_helper'
 # require_relative 'api_response.json'
 
 

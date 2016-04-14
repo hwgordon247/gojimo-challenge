@@ -6,8 +6,7 @@ feature 'welcome page' do
   end
 
   scenario 'has a button to the qualifications page' do
-    visit '/'
-    click_button('Continue')
+    proceed_qualifications
     expect(page).to have_content 'Qualifications'
   end
 end
