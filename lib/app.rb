@@ -13,14 +13,14 @@ class Gojimo < Sinatra::Base
   end
 
   get '/qualifications' do
-    @qualifications = ApiRequest.sort_qualifications
+    @qualifications = ApiRequest.data_evaluate.return_qualifications
     erb :'/qualifications'
   end
 
   get '/subjects' do
     @qualification = session[:qualification]
-    @subjects = ApiRequest.sort_subjects(@qualification)
-    @country = ApiRequest.qualification_country(@qualification)
+    @subjects = ApiRequest.data_evaluate.return_subjects(@qualification)
+    @country = ApiRequest.data_evaluate.return_country(@qualification)
     erb :'/subjects'
   end
 
