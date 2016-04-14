@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra'
 require_relative 'models/api_request'
+require_relative 'models/data_evaluate'
+
 
 class Gojimo < Sinatra::Base
   enable :sessions
