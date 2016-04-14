@@ -2,5 +2,8 @@
 
 <h2> Qualifications: </h2>
 <% @qualifications.each do |qualification| %>
-  <%= qualification %> <br>
+  <form action='/subjects' method='post'>
+    <input type='hidden' name='qualification' value='<%=qualification%>' />
+    <button type="submit"> <%= qualification %></button> <br>
+  </form>
 <% end %>
