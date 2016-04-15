@@ -17,11 +17,8 @@ class DataEvaluate
 
   def return_country(chosen_qualification)
     qualification = select_qualification(chosen_qualification)
-    if qualification['country'] == nil
-      'N/A'
-    else
-      qualification['country']['name']
-    end
+    return 'N/A' if qualification['country'] == nil
+    qualification['country']['name']
   end
 
 
