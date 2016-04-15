@@ -20,4 +20,17 @@ feature 'subject page' do
     click_button('Return')
     expect(page).to have_content 'Qualifications'
   end
+
+  scenario 'displays error when there are no subjects' do
+    proceed_qualifications
+    click_button('Test')
+    expect(page).to have_content 'No subjects available for this qualification'
+  end
+
+  scenario 'displays error when there is no county data' do
+    proceed_qualifications
+    click_button('Test')
+    expect(page).to have_content 'N/A'
+  end
+
 end
