@@ -5,12 +5,12 @@ To run the application, first fork and clone this repository.
 Then run:
 ```bundle install```
 
-To start the server run:
-```rackup```
+To start the server run 'rackup'.
+
 Then visit http://localhost:9292/.
 
-To view the tests, run:
-```rspec```
+To view the tests, run 'rspec'.
+
 
 #### The Challenge:
 
