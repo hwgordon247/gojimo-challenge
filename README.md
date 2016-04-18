@@ -1,4 +1,18 @@
-#### Gojimo Challenge
+#### Gojimo Challenge - Henry Gordon
+
+To run the application, first fork and clone this repository.
+
+Then run:
+```bundle install```
+
+To start the server run:
+```rackup```
+Then visit http://localhost:9292/.
+
+To view the tests, run:
+```rspec```
+
+#### The Challenge:
 
 Develop a very simple working application on your chosen platform (Android / iOS / Web) with the following functionality:
 1. Read the following JSON feed containing a list of qualifications (a sample is presented below for your reference): https://api.gojimo.net/api/v4/qualifications
